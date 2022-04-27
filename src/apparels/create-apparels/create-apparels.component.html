@@ -1,0 +1,57 @@
+<form [formGroup]="apparelForm">
+  <mat-tab-group>
+
+    <mat-tab label="Basic">
+
+      <div fxLayout='row' fxLayoutAlign='start center' fxLayoutGap='10px'>
+        <mat-form-field class='example-full-width' fxFlex='50'>
+          <mat-label>name</mat-label>
+          <input matInput formControlName='appareluniquename'>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout='row' fxLayoutAlign='start center' fxLayoutGap='10px'>
+        <mat-form-field class='example-full-width' fxFlex='50'>
+          <mat-label>appareluniquename</mat-label>
+          <input matInput formControlName='appareluniquename'>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout='row' fxLayoutAlign='start center' fxLayoutGap='10px'>
+        <mat-form-field class='example-full-width' fxFlex='50'>
+          <mat-label>whereType</mat-label>
+          <input matInput formControlName='whereType'>
+        </mat-form-field>
+      </div>
+
+
+
+      <div fxLayout='row' fxLayoutAlign='start center' fxLayoutGap='10px'>
+        <mat-form-field class='example-full-width' fxFlex='50'>
+          <mat-label>gender</mat-label>
+          <mat-select formControlName='gender'>
+            <mat-option [value]='option' *ngFor="let option of ['M','F','J']">{{option}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-tab>
+
+
+    <mat-tab label="Meshes">
+      <button mat-mini-fab color='primary' class='add-mesh-button' type='button' (click)='addMesh()'>
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-tab>
+
+
+    <mat-tab label="sizeChart"> <button mat-mini-fab color='primary' class='add-size-button' type='button'
+        (click)='addSizeField()'>
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-tab>
+  </mat-tab-group>
+  <mat-card-actions>
+    <button mat-raised-button color='secondary' (click)='dial.closeAll()'>Close</button>
+</mat-card-actions>
+</form>
+dialog
